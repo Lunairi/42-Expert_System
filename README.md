@@ -1,5 +1,13 @@
 # 42-Expert_System
-Expert System is a project where you implement a back-chain inference engine that will read a text file and provide the outcome. 
+Expert System is a project where you implement a back-chain inference engine that will read a text file and provide the outcome. The input file contains lines of logic, than provides facts (denoted by =) and later wants us to query and provide the results for select values (denoted by ?).
+
+
+Ex.
+- A + B => C
+- A => B
+- =A
+- ?A
+- Results: True
 
 # The conditions we have to fulfill
 - "AND" conditions. For example, "If A and B and [...] then X"

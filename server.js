@@ -27,7 +27,7 @@ function reset() {
 	graph.length = 0;
 	fileArray = [];
 	fileArray.length = 0;
-	step = 0;
+	step = 1;
 	delay = 0;
 	finish = 0;
 	filename = '';
@@ -39,10 +39,7 @@ app.get('/', function(req, res) {
     if (req.param('file')) {
     	reset();
     	graph = es.getGraph();
-    	step = 1;
-    	facts = [];
-    	current_line = 0;
-    	filename = '/Users/eggplant/42student/expert/test_cases/' + req.param('file');
+    	filename = __dirname + '/test_cases/' + req.param('file');
     	fileArray = es.expertSystem(filename);
     	facts = es.getFacts();
     	if (req.param('delay'))
@@ -53,7 +50,6 @@ app.get('/', function(req, res) {
     else if (req.param('step') == 1) {
     	es.setValues(current_line);
     	es.checkFacts(fileArray[current_line]);
-    	console.log(current_line);
     	if (current_line < fileArray.length)
     		current_line += 1;
     	else {
@@ -64,7 +60,6 @@ app.get('/', function(req, res) {
     	facts = es.getFacts();
     }
     else if (req.param('step') == 2) {
-    	console.log(current_line);
     	es.doEval(current_line);
     	if (current_line < graph.length)
     		current_line += 1;

@@ -3,6 +3,7 @@ const readline = require('readline');
 const expr = require('./expression.js');
 const _ = require('underscore');
 
+let aFacts = {};
 let facts = {};
 let opinions = {};
 let graph = [];
@@ -14,10 +15,14 @@ function fact(symbol) {
 }
 
 function update_fact(symbol, value) {
-	if (value)
+	if (value) {
 		facts[symbol] = true;
-	else
+		aFacts[symbol] = true;
+	}
+	else {
 		delete facts[symbol];
+		aFacts[symbol] = false;
+	}
 }
 
 function evaluateQuery(query) {
@@ -76,7 +81,7 @@ function evalLine(line, type) {
 
 function setFacts(op) {
 	for (let i = 1; i < op.length; i++)
-		facts[op[i]] = true;
+		update_fact(op[i], true);
 	cached = false;
 }
 
@@ -92,23 +97,20 @@ module.exports = {
 	checkFacts: (line) => {
 		try {
 			for (let i = 0; i < line.length; i++) {
-				console.log(line[i]);
 				if (line[i].match(/[a-z]/i)) {
-					console.log('facts[line[i]] ' + facts[line[i]]);
-					if (facts[line[i]] != true){
-						facts[line[i]] = false;
+					if (!fact(line[i])){
+						update_fact(line[i], false);
 					}
 				}
-				console.log('facts[line[i]] ' + facts[line[i]]);
 			}
 		}
 		catch(e) {
-			console.error('End of input');
 		}
 	},
 
 	reset: () => {
 		facts = {};
+		aFacts = {};
 		opinions ={};
 		graph = [];
 	},
@@ -125,7 +127,7 @@ module.exports = {
 	},
 
 	getFacts: () => {
-		return facts;
+		return aFacts;
 	},
 
 	getGraph: () => {
@@ -141,7 +143,6 @@ module.exports = {
 			evalLine(visArray[count], 'vis');
 		}
 		catch (e) {
-			console.error(e);
 		}
 	}
 }

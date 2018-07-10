@@ -17,5 +17,5 @@ There were no language constraints so we used node.js to write the Expert System
   
   
   Collabortaion Members:
-  apuel https://github.com/apuel
-  Lunairi https://github.com/Lunairi
+  - apuel https://github.com/apuel
+  - Lunairi https://github.com/Lunairi

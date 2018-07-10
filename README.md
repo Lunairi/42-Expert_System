@@ -6,8 +6,8 @@ Ex.
 - A + B => C
 - A => B
 - =A
-- ?A
-- Results: True
+- ?C
+- Results: C is True
 
 # The conditions we have to fulfill
 - "AND" conditions. For example, "If A and B and [...] then X"

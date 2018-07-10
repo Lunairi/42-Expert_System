@@ -1,0 +1,79 @@
+<head>
+		<title>Kill Me Please</title>
+		<meta name="viewport" content="initial-scale=1">
+		<link rel="stylesheet" href="/css/layout.css" type: "text/css">
+</head>
+
+<div class="master">
+	<div class="current">
+		<center>
+			<div class="headerdiv">
+				<h1>Current Line</h1>
+				<% if (current > 0) { %>
+	    			<h2 class="special"><%= farray[current - 1] %></h2>
+	    		<% } %>
+	    	</div>
+	    	<div class="headerdiv">
+	    		<h2>Input File</h2>
+	    		<% farray.forEach((item) => { %>
+	    			<%= item %><br>
+	    		<% }) %>
+	   		 </div>
+	    </center>
+	</div>
+
+
+	<div>
+	<center><h1>Values</h1></center>
+		<table>
+			<tr>
+				<% let i = 0 %>
+				<% for (var key in facts) { %>
+					<% i += 1 %>
+					<td class=<%= facts[key] + 'h' %>>
+					<%= key %> </td>
+					<td class=<%=facts[key] %>>
+					<%=facts[key] %> </td><td></td>
+					<% if (i % 5 == 0) { %>
+					</tr><tr></tr><tr>
+					<% } %>
+				<% } %>
+			</tr>
+		</table>
+	</div>
+<br><br>
+	<% if (finish == 1) { %>
+		<div>
+			<center><h2>Finished!</h2></center>
+			<table>
+				<tr>
+					<% let u = 0 %>
+					<% for (let i = 1; i < farray[farray.length - 1].length; i++) { %>
+						<% if (farray[farray.length - 1][i].match(/[a-z]/i)) { %>
+							<% u += 1 %>
+							<td class=<%=facts[farray[farray.length - 1][i]] + 'h' %>>
+							<%= farray[farray.length - 1][i] %> </td>
+							<td class=<%=facts[farray[farray.length - 1][i]] %>>
+							<%=facts[farray[farray.length - 1][i]] %> </td><td></td>
+							<% if (u % 5 == 0) { %>
+							</tr><tr></tr><tr>
+							<% } %>
+						<% } %>
+					<% } %>
+				</tr>
+			</table>
+		</div>
+	<% } %> <br>
+</div>
+
+<% if ((current < farray.length + 1) && (step == 1)) { %>
+<meta http-equiv="refresh" content="<%=delay%>;url=/?step=<%=step%>" />
+<% } %>
+
+<% if ((current < graph.length + 1) && (step == 2)) { %>
+<meta http-equiv="refresh" content="<%=delay%>;url=/?step=<%=step%>" />
+<% } %>
+
+<% if (step == 3) { %>
+<meta http-equiv="refresh" content="<%=delay%>;url=/?step=<%=step%>" />
+<% } %>

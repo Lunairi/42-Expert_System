@@ -1,0 +1,85 @@
+td {
+	border: 1px solid white;
+	padding: 3px;
+	font-family: arial;
+	font-size: 2vw;
+	font-size: 2vh;
+	width: 4vh;
+	width: 4vw;
+	height: 4vh;
+	height: 4vw;
+	text-align: center;
+}
+
+p {
+	margin: 2px;
+}
+table {
+	margin: auto;
+}
+
+h1 {
+	font-family: 'Futura', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	word-spacing: 2px;	
+}
+
+.special {
+	font-size: 5rem;
+	font-weight: 100;
+}
+
+h2 {
+	font-family: 'Futura', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	word-spacing: 2px;
+}
+
+.master {
+	width: 90%;
+	border: 1px solid black;
+	margin: auto;
+	font-family: 'Futura', sans-serif;
+	font-weight: 100;
+	text-transform: uppercase;
+	word-spacing: 2px;
+}
+
+.current {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.headerdiv {
+	display: inline-block;
+	vertical-align: top;
+	width: 48%;
+}
+
+.true {
+	background-color: greenyellow;
+	font-weight: bold;
+	border: 2px solid green;
+}
+
+.trueh {
+	background-color: seagreen;
+	font-weight: bold;
+	border: 2px solid darkgreen;
+}
+
+.false {
+	background-color: salmon;
+	font-weight: bold;
+	border: 2px solid red;
+}
+
+.falseh {
+	background-color: crimson;
+	font-weight: bold;
+	border: 2px solid darkred;
+}
+

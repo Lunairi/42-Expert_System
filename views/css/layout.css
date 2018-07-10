@@ -11,6 +11,14 @@ td {
 	text-align: center;
 }
 
+body {
+	background-image: url("https://i2.wp.com/www.tecnologiaegadgets.com/wp-content/uploads/2014/04/emoticons-facebook-oficiais.jpg?resize=940%2C500");
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 p {
 	margin: 2px;
 }
@@ -26,7 +34,7 @@ h1 {
 }
 
 .special {
-	font-size: 5rem;
+	font-size: 4rem;
 	font-weight: 100;
 }
 
@@ -37,6 +45,10 @@ h2 {
 	word-spacing: 2px;
 }
 
+.empty {
+	border: 0;
+}
+
 .master {
 	width: 90%;
 	border: 1px solid black;
@@ -45,6 +57,19 @@ h2 {
 	font-weight: 100;
 	text-transform: uppercase;
 	word-spacing: 2px;
+	background-color: #0a0a0a;
+	opacity: 0.8;
+	border: 2px solid #5D6D7E;
+	color: #fafafa;
+}
+
+.input {
+ 	border: 2px solid #5D6D7E;
+ 	width: 50%;
+}
+
+.headwrap {
+	text-shadow: 1px 1px #5D6D7E;
 }
 
 .current {

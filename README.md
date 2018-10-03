@@ -24,6 +24,6 @@ expression.
 There were no language constraints so we used node.js to write the Expert System, and utilized express and ejs to create a simple visualizer for the logic flow. Visualizer requires you to host locally and pass ?file=<test case> to run visualizer.
   
   
-  Collabortaion Members:
+  Collaboration Members:
   - apuel https://github.com/apuel
   - Lunairi https://github.com/Lunairi
